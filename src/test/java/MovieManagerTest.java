@@ -49,9 +49,10 @@ public class MovieManagerTest {
 
     @Test
     public void shouldAddMoviesOverLimit() {
-        MovieManager manager = new MovieManager();
+        MovieManager manager = new MovieManager(10);
         manager.add("Film 1");
         manager.add("Film 2");
+        manager.add("Film 3");
         manager.add("Film 4");
         manager.add("Film 5");
         manager.add("Film 6");
@@ -63,7 +64,7 @@ public class MovieManagerTest {
 
     @Test
     public void shouldAddMoviesLessLimit() {
-        MovieManager manager = new MovieManager();
+        MovieManager manager = new MovieManager(5);
         manager.add("Film 1");
         manager.add("Film 2");
         manager.add("Film 3");

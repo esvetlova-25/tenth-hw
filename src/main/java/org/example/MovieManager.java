@@ -5,6 +5,7 @@ public class MovieManager {
     private int limit;
 
     public MovieManager() {
+
         this.limit = 5;
     }
 
@@ -16,9 +17,10 @@ public class MovieManager {
         String[] tmp = new String[movies.length + 1];
         for (int i = 0; i < movies.length; i++) {
             tmp[i] = movies[i];
-            tmp[tmp.length - 1] = movie;
-            movies = tmp;
+
         }
+        tmp[tmp.length - 1] = movie;
+        movies = tmp;
     }
 
     public String[] findAll() {
@@ -33,7 +35,7 @@ public class MovieManager {
             resultLength = limit;
         }
 
-        String[] tmp = new String[5];
+        String[] tmp = new String[resultLength];
         for (int i = 0; i < tmp.length; i++) {
             tmp[i] = movies[movies.length - 1 - i];
         }
